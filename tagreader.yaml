@@ -40,15 +40,13 @@ esphome:
     - wait_until:
         api.connected:
     - logger.log: API is connected!
-    - rtttl.play: "success:d=24,o=5,b=100:c,g,b"
     - light.turn_on:
         id: activity_led
         brightness: 100%
-        red: 0%
-        green: 0%
-        blue: 100%
+        red: 35%
+        green: 100%
+        blue: 50%
         flash_length: 500ms
-    - switch.turn_on: buzzer_enabled
     - switch.turn_on: led_enabled
 
 # Define switches to control LED and buzzer from HA
@@ -58,7 +56,7 @@ switch:
   id: buzzer_enabled
   icon: mdi:volume-high
   optimistic: true
-  restore_mode: RESTORE_DEFAULT_ON
+  restore_mode: RESTORE_DEFAULT_OFF
   entity_category: config
 - platform: template
   name: "${friendly_name} LED enabled"
@@ -405,4 +403,4 @@ light:
   type: GRB
   id: activity_led
   name: "${friendly_name} LED"
-  restore_mode: ALWAYS_OFF
+  restore_mode: ALWAYS_ON
