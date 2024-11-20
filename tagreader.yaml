@@ -42,7 +42,7 @@ esphome:
     - logger.log: API is connected!
     - light.turn_on:
         id: activity_led
-        brightness: 100%
+        brightness: 50%
         red: 35%
         green: 100%
         blue: 50%
