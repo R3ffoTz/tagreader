@@ -18,6 +18,10 @@ improv_serial:
 substitutions:
   name: tagreader
   friendly_name: TagReader
+  
+esp8266:
+  board: d1_mini
+
 
 esphome:
   name: $name
